@@ -111,16 +111,16 @@ public class Rolodex {
 					String firstName3 = CheckInput.getString();
 					System.out.print("Last name: ");
 					String lastName3 = CheckInput.getString();
-					LinkedList full = contacts.search(firstName3, lastName3);
+					int full = contacts.search(firstName3, lastName3);
 					System.out.println("Searching ....");
-					if (full.isEmpty()) {
+					if (full==-1) {
 						System.out.println("Contact doesnt exist ");
 						System.out.println("");
 						System.out.println("Enter 1 - 6 again");
 						userInput = CheckInput.getIntRange(0, 6);
 					} else {
-						for (int i = 0; i < full.size(); i++) {
-							System.out.print(full.get(i).toString());
+						for (int i = 0; i < contacts.size(); i++) {
+							System.out.print(contacts.get(i).toString());
 						}
 						System.out.println("");
 						System.out.println("Enter 1 - 6 again");
@@ -195,27 +195,31 @@ public class Rolodex {
 						if (subInput3==1) {
 							System.out.print("Change first Name: ");
 							String firstName5 = CheckInput.getString();
-							contacts.get(full1);
+							contacts.get(full1+1).setfirstName(firstName5);
+							System.out.println("First name updated" );
+							System.out.println("");
+							System.out.println("Enter 1 - 6 again");
+							userInput = CheckInput.getIntRange(1, 6);
 						}else if(subInput3==2){
 							System.out.print("Change the last Name: ");
 							String lastName5= CheckInput.getString();
-							full1.setlastName(lastName5);
+							contacts.get(full1).setlastName(lastName5);
 						}else if(subInput3==3) {
 							System.out.print("Change the Phone number: ");
 							String phoneNumber5= CheckInput.getString();
-							full1.setphoneNumber(phoneNumber5);
+							contacts.get(full1).setphoneNumber(phoneNumber5);
 						}else if(subInput3==4) {
 							System.out.print("Change the address: ");
 							String address5= CheckInput.getString();
-							full1.setaddress(address5);
+							contacts.get(full1).setaddress(address5);
 						}else if(subInput3==5) {
 							System.out.print("Change the city: ");
 							String city5 = CheckInput.getString();
-							full1.setcity(city5);
+							contacts.get(full1).setcity(city5);
 						}else if (subInput3==6) {
 							System.out.print("Change the zip Code: ");
 							String zipCode5 = CheckInput.getString();
-							full1.getzipCode()
+							contacts.get(full1).setzipCode(zipCode5);
 						}
 						
 					}

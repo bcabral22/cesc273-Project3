@@ -198,23 +198,25 @@ public class LinkedList {
 	}
 
 	public int search(String firstName2, String lastName2) {
-		int i=0;
-		Contact ser = new Contact(firstName2,lastName2,null,null,null,null);
+		int i = 0;
+		Contact ser = new Contact(firstName2, lastName2, null, null, null, null);
 		if (!isEmpty()) {
 			if (ser.equals(first.data)) {
 				return i;
-			}
-			Node n = first;
-			while (n.next != null &&! (ser.equals(n.next.data))) {
-				n = n.next;	
-				i=i+1;
-					
+			} else {
+				Node n = first;
+				while (n.next != null && !(ser.equals(n.next.data))) {
+					n = n.next;
+					i = i + 1;
+
 				}
-			if (n.next == null) {
-				System.out.println("Name isn't here");
-				return -1;
-			}else {
-				return i;
+				if (n.next == null) {
+					System.out.println("Contact doesnt exist.");
+						return -1;
+
+				} else {
+					return i;
+				}
 			}
 		}
 		return -1;

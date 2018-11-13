@@ -170,8 +170,8 @@ public class Contact {
 	public boolean equals(Object o) {
 		if (o instanceof Contact) {
 			Contact c = (Contact) o;
-			boolean checkFirst = this.getfirstName().equals(c.getfirstName());
-			boolean checkLast = this.getlastName().equals(c.getlastName());
+			boolean checkFirst = this.getfirstName().equalsIgnoreCase(c.getfirstName());
+			boolean checkLast = this.getlastName().equalsIgnoreCase(c.getlastName());
 			return checkFirst && checkLast;
 		} else {
 			return false;
